@@ -27,7 +27,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Greeting("Android")
+                    MainComposable()
                 }
             }
         }
@@ -35,7 +35,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, viewModel: MainViewModel = hiltViewModel()) {
+fun MainComposable(viewModel: MainViewModel = hiltViewModel()) {
     Button(onClick = {
         viewModel.apiTVShowPopular(1)
     }){
@@ -47,6 +47,6 @@ fun Greeting(name: String, viewModel: MainViewModel = hiltViewModel()) {
 @Composable
 fun DefaultPreview() {
     Android_declarativeTheme {
-        Greeting("Android")
+        MainComposable()
     }
 }
