@@ -33,6 +33,7 @@ fun MainScreen(navController: NavController) {
     val tvShows by viewModel.tvShowsFromApi.observeAsState(arrayListOf())
 
     MainScreenContent(onItemClick = {
+        //viewModel.insertTVShowToDB(it)
         navController.navigate("details" + "/${it.id}")
     }, isLoading, tvShows)
 }
