@@ -34,7 +34,7 @@ fun MainScreen(navController: NavController) {
 
     MainScreenContent(onItemClick = {
         //viewModel.insertTVShowToDB(it)
-        navController.navigate("details" + "/${it.id}")
+        navController.navigate("details" + "/${it.id}" + "/${it.name}" + "/${it.network}")
     }, isLoading, tvShows)
 }
 

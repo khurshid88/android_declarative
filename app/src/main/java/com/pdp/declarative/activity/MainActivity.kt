@@ -53,10 +53,23 @@ class MainActivity : ComponentActivity() {
                             MainScreen(navController)
                         }
                         composable(
-                            route = "details/{show_id}"
+                            route = "details/{show_id}/{show_name}/{show_type}",
+                            arguments = listOf(
+                                navArgument("show_id") {
+                                    type = NavType.StringType
+                                },
+                                navArgument("show_name") {
+                                    type = NavType.StringType
+                                },
+                                navArgument("show_type") {
+                                    type = NavType.StringType
+                                }
+                            )
                         ) {
                             val show_id = it.arguments?.getString("show_id")
-                            DetailsScreen(navController, show_id!!)
+                            val show_name = it.arguments?.getString("show_name")
+                            val show_type = it.arguments?.getString("show_type")
+                            DetailsScreen(navController, show_id!!,show_name!!,show_type!!)
                         }
                     }
                 }
