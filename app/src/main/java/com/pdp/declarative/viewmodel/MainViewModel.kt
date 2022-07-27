@@ -20,6 +20,10 @@ class MainViewModel @Inject constructor(private val tvShowRepository: TVShowRepo
 
     val tvShowPopular = MutableLiveData<TVShowPopular>()
 
+    init {
+        apiTVShowPopular(1)
+    }
+
     /**
      * Retrofit Related
      */
